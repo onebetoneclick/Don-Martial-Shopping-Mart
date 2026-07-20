@@ -60,6 +60,8 @@ const dialogMessage = document.getElementById("dialogMessage");
 
 const dialogButton = document.getElementById("dialogButton");
 
+const profileNav = document.getElementById("profileNav");
+
 /* ==========================================================
 SHOW LOADING
 ========================================================== */
@@ -463,7 +465,7 @@ bottomItems.forEach(item=>{
 
             case "Home":
 
-                window.location.href="../dashboard/dashboard.html";
+                window.location.href="../../pages/dashboard/dashboard.html";
 
             break;
 
@@ -487,7 +489,7 @@ bottomItems.forEach(item=>{
 
             case "Profile":
 
-                // window.location.href="../profile/profile.html";
+                // window.location.href="../../pages/auth/profile.html";
 
             break;
 
@@ -505,23 +507,11 @@ const completeProfileBtn=document.getElementById("completeProfileBtn");
 
 if(completeProfileBtn){
 
-    completeProfileBtn.addEventListener("click",()=>{
+    completeProfileBtn.addEventListener("click", () => {
 
-        // Change this later when we build the profile page
+    window.location.href = "../../pages/auth/profile.html";
 
-        // window.location.href="../profile/profile.html";
-
-        showDialog(
-
-            "person",
-
-            "Profile",
-
-            "The Profile page will be built next."
-
-        );
-
-    });
+});
 
 }
 
@@ -556,6 +546,24 @@ READY
 ========================================================== */
 
 console.log("======================================");
+/* ==========================================================
+PROFILE AVATAR
+========================================================== */
+
+profileAvatar.addEventListener("click", () => {
+
+    window.location.href = "../../pages/auth/profile.html";
+
+});
+/* ==========================================================
+PROFILE BUTTON
+========================================================== */
+
+profileNav.addEventListener("click",()=>{
+
+    window.location.href="../../pages/auth/settings.html";
+
+});
 
 console.log("Dashboard Ready");
 

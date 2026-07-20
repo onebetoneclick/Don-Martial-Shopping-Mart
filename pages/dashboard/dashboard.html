@@ -127,13 +127,14 @@ shopping_cart
 
 <div class="profile-box">
 
-<img
+<a href="../../pages/auth/profile.html">
 
-id="profileAvatar"
+    <img
+        id="profileAvatar"
+        src="../../assets/avatars/default-avatar.png"
+        alt="Profile">
 
-src="assets/avatars/default-avatar.png"
-
-alt="Avatar">
+</a>
 
 </div>
 
@@ -649,7 +650,9 @@ Orders
 
 </button>
 
-<button class="bottom-item">
+<button
+id="profileNav"
+class="bottom-item">
 
 <span class="material-symbols-rounded">
 
@@ -664,9 +667,7 @@ Profile
 </p>
 
 </button>
-
 </nav>
-
 <!-- ==========================================
 CUSTOM DIALOG
 ========================================== -->

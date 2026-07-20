@@ -711,7 +711,7 @@ async function checkSession(){
 
         if(data.session){
 
-            window.location.href="../dashboard/dashboard.html";
+           window.location.href = "pages/dashboard/dashboard.html";
 
         }
 

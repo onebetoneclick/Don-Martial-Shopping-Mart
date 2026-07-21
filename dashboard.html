@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Don Martial Admin Dashboard
+
+</title>
+
+<!-- ==========================================
+GOOGLE FONT
+========================================== -->
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- ==========================================
+GOOGLE MATERIAL ICONS
+========================================== -->
+
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
+
+<!-- ==========================================
+ADMIN CSS
+========================================== -->
+
+<link
+rel="stylesheet"
+href="../../css/admin/dashboard.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+SIDEBAR
+========================================== -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<img
+
+src="../../assets/logo/logo.png"
+
+alt="Logo"
+
+class="logo">
+
+<h2>
+
+DM Admin
+
+</h2>
+
+</div>
+
+<nav class="sidebar-menu">
+
+<button
+id="dashboardBtn"
+class="menu-item active">
+
+<span class="material-symbols-rounded">
+
+dashboard
+
+</span>
+
+Dashboard
+
+</button>
+
+<button
+id="productsBtn"
+class="menu-item">
+
+<span class="material-symbols-rounded">
+
+inventory_2
+
+</span>
+
+Products
+
+</button>
+
+<button
+id="customersBtn"
+class="menu-item">
+
+<span class="material-symbols-rounded">
+
+groups
+
+</span>
+
+Customers
+
+</button>
+
+<button
+id="ordersBtn"
+class="menu-item">
+
+<span class="material-symbols-rounded">
+
+shopping_bag
+
+</span>
+
+Orders
+
+</button>
+
+<button
+id="walletBtn"
+class="menu-item">
+
+<span class="material-symbols-rounded">
+
+account_balance_wallet
+
+</span>
+
+Wallet
+
+</button>
+
+<button
+id="notificationBtn"
+class="menu-item">
+
+<span class="material-symbols-rounded">
+
+notifications
+
+</span>
+
+Notifications
+
+</button>
+
+<button
+id="analyticsBtn"
+class="menu-item">
+
+<span class="material-symbols-rounded">
+
+analytics
+
+</span>
+
+Analytics
+
+</button>
+
+<button
+id="settingsBtn"
+class="menu-item">
+
+<span class="material-symbols-rounded">
+
+settings
+
+</span>
+
+Settings
+
+</button>
+
+<button
+id="logoutBtn"
+class="menu-item logout">
+
+<span class="material-symbols-rounded">
+
+logout
+
+</span>
+
+Logout
+
+</button>
+
+</nav>
+
+</aside>
+
+<!-- ==========================================
+MAIN CONTENT
+========================================== -->
+
+<div class="main-content">
+
+<!-- ==========================================
+TOP HEADER
+========================================== -->
+
+<header class="top-header">
+
+<div class="header-left">
+
+<h1>
+
+Dashboard
+
+</h1>
+
+<p>
+
+Welcome back,
+
+<span id="adminName">
+
+Admin
+
+</span>
+
+</p>
+
+</div>
+
+<div class="header-right">
+
+<button
+id="searchBtn"
+class="icon-btn">
+
+<span class="material-symbols-rounded">
+
+search
+
+</span>
+
+</button>
+
+<button
+id="notificationBell"
+class="icon-btn">
+
+<span class="material-symbols-rounded">
+
+notifications
+
+</span>
+
+</button>
+
+<div class="admin-profile">
+
+<img
+
+id="adminAvatar"
+
+src="../../assets/avatars/default-avatar.png"
+
+alt="Admin">
+
+</div>
+
+</div>
+
+</header>
+<!-- ==========================================
+STATISTICS
+========================================== -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+<span class="material-symbols-rounded">
+
+inventory_2
+
+</span>
+
+</div>
+
+<div class="stat-info">
+
+<h3 id="totalProducts">
+
+0
+
+</h3>
+
+<p>
+
+Total Products
+
+</p>
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+<span class="material-symbols-rounded">
+
+groups
+
+</span>
+
+</div>
+
+<div class="stat-info">
+
+<h3 id="totalCustomers">
+
+0
+
+</h3>
+
+<p>
+
+Customers
+
+</p>
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+<span class="material-symbols-rounded">
+
+shopping_bag
+
+</span>
+
+</div>
+
+<div class="stat-info">
+
+<h3 id="totalOrders">
+
+0
+
+</h3>
+
+<p>
+
+Orders
+
+</p>
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+<span class="material-symbols-rounded">
+
+payments
+
+</span>
+
+</div>
+
+<div class="stat-info">
+
+<h3 id="totalRevenue">
+
+₦0.00
+
+</h3>
+
+<p>
+
+Revenue
+
+</p>
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+<span class="material-symbols-rounded">
+
+account_balance_wallet
+
+</span>
+
+</div>
+
+<div class="stat-info">
+
+<h3 id="walletBalance">
+
+₦0.00
+
+</h3>
+
+<p>
+
+Wallet Balance
+
+</p>
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+<span class="material-symbols-rounded">
+
+local_shipping
+
+</span>
+
+</div>
+
+<div class="stat-info">
+
+<h3 id="pendingOrders">
+
+0
+
+</h3>
+
+<p>
+
+Pending Orders
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+QUICK ACTIONS
+========================================== -->
+
+<section class="quick-actions">
+
+<h2>
+
+Quick Actions
+
+</h2>
+
+<div class="action-grid">
+
+<button
+id="addProductBtn"
+class="action-card">
+
+<span class="material-symbols-rounded">
+
+add_box
+
+</span>
+
+<p>
+
+Add Product
+
+</p>
+
+</button>
+
+<button
+id="manageProductsBtn"
+class="action-card">
+
+<span class="material-symbols-rounded">
+
+inventory
+
+</span>
+
+<p>
+
+Products
+
+</p>
+
+</button>
+
+<button
+id="manageCustomersBtn"
+class="action-card">
+
+<span class="material-symbols-rounded">
+
+group
+
+</span>
+
+<p>
+
+Customers
+
+</p>
+
+</button>
+
+<button
+id="manageOrdersBtn"
+class="action-card">
+
+<span class="material-symbols-rounded">
+
+shopping_cart_checkout
+
+</span>
+
+<p>
+
+Orders
+
+</p>
+
+</button>
+
+<button
+id="walletManagerBtn"
+class="action-card">
+
+<span class="material-symbols-rounded">
+
+account_balance
+
+</span>
+
+<p>
+
+Wallet
+
+</p>
+
+</button>
+
+<button
+id="sendNotificationBtn"
+class="action-card">
+
+<span class="material-symbols-rounded">
+
+campaign
+
+</span>
+
+<p>
+
+Send Notification
+
+</p>
+
+</button>
+
+</div>
+
+</section>
+<!-- ==========================================
+ANALYTICS
+========================================== -->
+
+<section class="analytics-section">
+
+<div class="analytics-card">
+
+<h2>
+
+Revenue Analytics
+
+</h2>
+
+<div id="revenueChart" class="chart-box">
+
+<p>
+
+Revenue chart will appear here.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="analytics-card">
+
+<h2>
+
+Sales Analytics
+
+</h2>
+
+<div id="salesChart" class="chart-box">
+
+<p>
+
+Sales chart will appear here.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+RECENT ACTIVITIES
+========================================== -->
+
+<section class="recent-section">
+
+<div class="recent-card">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<div id="recentActivities">
+
+<div class="empty-state">
+
+<span class="material-symbols-rounded">
+
+history
+
+</span>
+
+<p>
+
+No recent activity.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="recent-card">
+
+<h2>
+
+Latest Orders
+
+</h2>
+
+<div id="latestOrders">
+
+<div class="empty-state">
+
+<span class="material-symbols-rounded">
+
+shopping_bag
+
+</span>
+
+<p>
+
+No orders yet.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+CUSTOMERS
+========================================== -->
+
+<section class="recent-section">
+
+<div class="recent-card">
+
+<h2>
+
+Newest Customers
+
+</h2>
+
+<div id="latestCustomers">
+
+<div class="empty-state">
+
+<span class="material-symbols-rounded">
+
+group
+
+</span>
+
+<p>
+
+No customers found.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="recent-card">
+
+<h2>
+
+System Status
+
+</h2>
+
+<div class="system-status">
+
+<div class="status-item">
+
+<span class="status-dot online"></span>
+
+<span>
+
+Supabase Connected
+
+</span>
+
+</div>
+
+<div class="status-item">
+
+<span class="status-dot online"></span>
+
+<span>
+
+Storage Online
+
+</span>
+
+</div>
+
+<div class="status-item">
+
+<span class="status-dot online"></span>
+
+<span>
+
+Admin Panel Active
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+LOADING
+========================================== -->
+
+<div
+id="loadingOverlay"
+class="loading-overlay">
+
+<div class="loading-card">
+
+<div class="loader"></div>
+
+<h3>
+
+Loading Dashboard...
+
+</h3>
+
+<p>
+
+Please wait...
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+CUSTOM DIALOG
+========================================== -->
+
+<div
+id="dialogOverlay"
+class="dialog-overlay">
+
+<div class="dialog-box">
+
+<div
+id="dialogIcon"
+class="dialog-icon">
+
+<span class="material-symbols-rounded">
+
+info
+
+</span>
+
+</div>
+
+<h2
+id="dialogTitle">
+
+Information
+
+</h2>
+
+<p
+id="dialogMessage">
+
+Message
+
+</p>
+
+<button
+id="dialogButton">
+
+Continue
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+SUPABASE
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../js/auth/config.js"></script>
+
+<script src="../../js/auth/supabase.js"></script>
+
+<!-- ==========================================
+ADMIN DASHBOARD
+========================================== -->
+
+<script src="../../js/admin/dashboard.js"></script>
+
+</body>
+
+</html>

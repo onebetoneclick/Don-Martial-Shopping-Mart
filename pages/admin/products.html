@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Manage Products
+
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
+
+<link
+rel="stylesheet"
+href="../../css/admin/products.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ==========================================
+HEADER
+========================================== -->
+
+<header class="page-header">
+
+<div class="header-left">
+
+<button
+id="backBtn"
+class="back-btn">
+
+<span class="material-symbols-rounded">
+
+arrow_back
+
+</span>
+
+</button>
+
+<div>
+
+<h1>
+
+Manage Products
+
+</h1>
+
+<p>
+
+View, Edit and Delete Products
+
+</p>
+
+</div>
+
+</div>
+
+<a
+href="../../pages/admin/add-product.html"
+class="add-product-btn">
+
+<span class="material-symbols-rounded">
+
+add
+
+</span>
+
+Add Product
+
+</a>
+
+</header>
+
+<!-- ==========================================
+TOP CARDS
+========================================== -->
+
+<div class="summary-grid">
+
+<div class="summary-card">
+
+<span class="material-symbols-rounded">
+
+inventory_2
+
+</span>
+
+<div>
+
+<h2 id="totalProducts">
+
+0
+
+</h2>
+
+<p>
+
+Total Products
+
+</p>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<span class="material-symbols-rounded">
+
+star
+
+</span>
+
+<div>
+
+<h2 id="featuredProducts">
+
+0
+
+</h2>
+
+<p>
+
+Featured Products
+
+</p>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<span class="material-symbols-rounded">
+
+visibility
+
+</span>
+
+<div>
+
+<h2 id="activeProducts">
+
+0
+
+</h2>
+
+<p>
+
+Active Products
+
+</p>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<span class="material-symbols-rounded">
+
+inventory
+
+</span>
+
+<div>
+
+<h2 id="stockProducts">
+
+0
+
+</h2>
+
+<p>
+
+Items In Stock
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+SEARCH BAR
+========================================== -->
+
+<div class="search-card">
+
+<div class="search-box">
+
+<span class="material-symbols-rounded">
+
+search
+
+</span>
+
+<input
+
+type="text"
+
+id="searchInput"
+
+placeholder="Search products...">
+
+</div>
+
+</div>
+<!-- ==========================================
+PRODUCT TABLE
+========================================== -->
+
+<div class="table-card">
+
+<div class="table-header">
+
+<h2>
+
+All Products
+
+</h2>
+
+<div class="table-actions">
+
+<select id="filterCategory">
+
+<option value="">
+
+All Categories
+
+</option>
+
+<option value="Electronics">
+
+Electronics
+
+</option>
+
+<option value="Phones">
+
+Phones
+
+</option>
+
+<option value="Fashion">
+
+Fashion
+
+</option>
+
+<option value="Computers">
+
+Computers
+
+</option>
+
+<option value="Home & Kitchen">
+
+Home & Kitchen
+
+</option>
+
+<option value="Beauty">
+
+Beauty
+
+</option>
+
+<option value="Health">
+
+Health
+
+</option>
+
+<option value="Sports">
+
+Sports
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="table-responsive">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+
+Image
+
+</th>
+
+<th>
+
+Product
+
+</th>
+
+<th>
+
+Category
+
+</th>
+
+<th>
+
+Price
+
+</th>
+
+<th>
+
+Cashback
+
+</th>
+
+<th>
+
+Stock
+
+</th>
+
+<th>
+
+Status
+
+</th>
+
+<th>
+
+Actions
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="productsTable">
+
+<!-- Products Loaded Here -->
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ==========================================
+EMPTY STATE
+========================================== -->
+
+<div
+id="emptyState"
+class="empty-state">
+
+<span class="material-symbols-rounded">
+
+inventory_2
+
+</span>
+
+<h3>
+
+No Products Found
+
+</h3>
+
+<p>
+
+Products you upload will appear here.
+
+</p>
+
+<a
+
+href="../../pages/admin/add-product.html"
+
+class="empty-btn">
+
+Add Your First Product
+
+</a>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+DELETE PRODUCT MODAL
+========================================== -->
+
+<div
+id="deleteModal"
+class="dialog-overlay">
+
+<div class="dialog-box">
+
+<div class="dialog-icon warning">
+
+<span class="material-symbols-rounded">
+
+delete
+
+</span>
+
+</div>
+
+<h2>
+
+Delete Product
+
+</h2>
+
+<p>
+
+Are you sure you want to permanently delete this product?
+
+</p>
+
+<div class="dialog-actions">
+
+<button
+id="cancelDelete"
+class="secondary-btn">
+
+Cancel
+
+</button>
+
+<button
+id="confirmDelete"
+class="danger-btn">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+LOADING
+========================================== -->
+
+<div
+id="loadingOverlay"
+class="loading-overlay">
+
+<div class="loading-card">
+
+<div class="loader"></div>
+
+<h3>
+
+Loading Products...
+
+</h3>
+
+<p>
+
+Please wait...
+
+</p>
+
+</div>
+
+</div>
+<!-- ==========================================
+SUCCESS DIALOG
+========================================== -->
+
+<div
+id="dialogOverlay"
+class="dialog-overlay">
+
+<div class="dialog-box">
+
+<div
+id="dialogIcon"
+class="dialog-icon success">
+
+<span class="material-symbols-rounded">
+
+check_circle
+
+</span>
+
+</div>
+
+<h2 id="dialogTitle">
+
+Success
+
+</h2>
+
+<p id="dialogMessage">
+
+Operation completed successfully.
+
+</p>
+
+<button id="dialogButton">
+
+Continue
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+TOAST
+========================================== -->
+
+<div
+id="toast"
+class="toast">
+
+<span
+id="toastIcon"
+class="material-symbols-rounded">
+
+check_circle
+
+</span>
+
+<span id="toastText">
+
+Success
+
+</span>
+
+</div>
+
+<!-- ==========================================
+SUPABASE
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../js/auth/config.js"></script>
+
+<script src="../../js/auth/supabase.js"></script>
+
+<!-- ==========================================
+PRODUCTS JS
+========================================== -->
+
+<script src="../../js/admin/products.js"></script>
+
+</body>
+
+</html>

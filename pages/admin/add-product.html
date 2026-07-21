@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Add Product
+
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
+
+<link
+rel="stylesheet"
+href="../../css/admin/add-product.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ==========================================
+HEADER
+========================================== -->
+
+<header class="page-header">
+
+<button
+id="backBtn"
+class="back-btn">
+
+<span class="material-symbols-rounded">
+
+arrow_back
+
+</span>
+
+</button>
+
+<div>
+
+<h1>
+
+Add Product
+
+</h1>
+
+<p>
+
+Create a new product for Don Martial Shopping Mart
+
+</p>
+
+</div>
+
+</header>
+
+<!-- ==========================================
+FORM
+========================================== -->
+
+<form
+id="productForm">
+
+<div class="card">
+
+<h2>
+
+Basic Information
+
+</h2>
+
+<div class="grid">
+
+<div class="form-group">
+
+<label>
+
+Product Name
+
+</label>
+
+<input
+
+type="text"
+
+id="productName"
+
+placeholder="Enter product name"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Category
+
+</label>
+
+<select id="category">
+
+<option value="">
+
+Select Category
+
+</option>
+
+<option>Electronics</option>
+
+<option>Fashion</option>
+
+<option>Phones</option>
+
+<option>Computers</option>
+
+<option>Home & Kitchen</option>
+
+<option>Beauty</option>
+
+<option>Health</option>
+
+<option>Sports</option>
+
+<option>Groceries</option>
+
+<option>Books</option>
+
+<option>Baby Products</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Brand
+
+</label>
+
+<input
+
+type="text"
+
+id="brand"
+
+placeholder="Brand name">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+SKU
+
+</label>
+
+<input
+
+type="text"
+
+id="sku"
+
+placeholder="Product SKU">
+
+</div>
+
+</div>
+
+</div>
+<!-- ==========================================
+PRICING
+========================================== -->
+
+<div class="card">
+
+<h2>
+
+Pricing & Inventory
+
+</h2>
+
+<div class="grid">
+
+<div class="form-group">
+
+<label>
+
+Selling Price (₦)
+
+</label>
+
+<input
+
+type="number"
+
+id="price"
+
+placeholder="0.00"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Cashback (₦)
+
+</label>
+
+<input
+
+type="number"
+
+id="cashback"
+
+placeholder="0.00"
+
+value="0">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Quantity
+
+</label>
+
+<input
+
+type="number"
+
+id="quantity"
+
+placeholder="Available Quantity"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Stock Status
+
+</label>
+
+<select id="stockStatus">
+
+<option value="In Stock">
+
+In Stock
+
+</option>
+
+<option value="Low Stock">
+
+Low Stock
+
+</option>
+
+<option value="Out of Stock">
+
+Out of Stock
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Product Status
+
+</label>
+
+<select id="productStatus">
+
+<option value="Active">
+
+Active
+
+</option>
+
+<option value="Hidden">
+
+Hidden
+
+</option>
+
+<option value="Draft">
+
+Draft
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group checkbox-group">
+
+<label>
+
+Featured Product
+
+</label>
+
+<div class="checkbox-row">
+
+<input
+
+type="checkbox"
+
+id="featured">
+
+<span>
+
+Show on Homepage
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+DESCRIPTION
+========================================== -->
+
+<div class="card">
+
+<h2>
+
+Product Description
+
+</h2>
+
+<div class="form-group">
+
+<label>
+
+Description
+
+</label>
+
+<textarea
+
+id="description"
+
+rows="8"
+
+placeholder="Enter full product description...">
+
+</textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Specifications
+
+</label>
+
+<textarea
+
+id="specifications"
+
+rows="6"
+
+placeholder="Example:
+
+Color: Black
+
+Storage: 256GB
+
+RAM: 8GB
+
+Battery: 5000mAh">
+
+</textarea>
+
+</div>
+
+</div>
+<!-- ==========================================
+PRODUCT IMAGES
+========================================== -->
+
+<div class="card">
+
+<h2>
+
+Product Images
+
+</h2>
+
+<div
+id="uploadArea"
+class="upload-area">
+
+<span class="material-symbols-rounded">
+
+cloud_upload
+
+</span>
+
+<h3>
+
+Click or Drag Images Here
+
+</h3>
+
+<p>
+
+You can upload multiple product images.
+
+</p>
+
+<input
+
+type="file"
+
+id="productImages"
+
+accept="image/*"
+
+multiple
+
+hidden>
+
+<button
+type="button"
+id="selectImagesBtn">
+
+Choose Images
+
+</button>
+
+</div>
+
+<div
+id="imagePreview"
+class="image-preview">
+
+</div>
+
+</div>
+
+<!-- ==========================================
+SAVE PRODUCT
+========================================== -->
+
+<div class="card">
+
+<div class="action-buttons">
+
+<button
+type="reset"
+id="resetBtn"
+class="secondary-btn">
+
+Clear Form
+
+</button>
+
+<button
+type="submit"
+id="saveProductBtn"
+class="primary-btn">
+
+<span class="material-symbols-rounded">
+
+save
+
+</span>
+
+Save Product
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+<!-- ==========================================
+LOADING
+========================================== -->
+
+<div
+id="loadingOverlay"
+class="loading-overlay">
+
+<div class="loading-card">
+
+<div class="loader"></div>
+
+<h3>
+
+Uploading Product...
+
+</h3>
+
+<p>
+
+Please wait while we save your product.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+CUSTOM DIALOG
+========================================== -->
+
+<div
+id="dialogOverlay"
+class="dialog-overlay">
+
+<div class="dialog-box">
+
+<div
+id="dialogIcon"
+class="dialog-icon">
+
+<span class="material-symbols-rounded">
+
+check_circle
+
+</span>
+
+</div>
+
+<h2
+id="dialogTitle">
+
+Success
+
+</h2>
+
+<p
+id="dialogMessage">
+
+Product saved successfully.
+
+</p>
+
+<button
+id="dialogButton">
+
+Continue
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+SUPABASE
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../js/auth/config.js"></script>
+
+<script src="../../js/auth/supabase.js"></script>
+
+<!-- ==========================================
+ADD PRODUCT JS
+========================================== -->
+
+<script src="../../js/admin/add-product.js"></script>
+
+</body>
+
+</html>

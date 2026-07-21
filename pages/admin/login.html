@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Don Martial Admin Login
+
+</title>
+
+<!-- ==========================================
+GOOGLE FONT
+========================================== -->
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- ==========================================
+GOOGLE MATERIAL ICONS
+========================================== -->
+
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
+
+<!-- ==========================================
+ADMIN CSS
+========================================== -->
+
+<link
+rel="stylesheet"
+href="../../css/admin/login.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+BACKGROUND
+========================================== -->
+
+<div class="background">
+
+<div class="circle circle1"></div>
+
+<div class="circle circle2"></div>
+
+<div class="circle circle3"></div>
+
+</div>
+
+<!-- ==========================================
+LOGIN CARD
+========================================== -->
+
+<div class="login-container">
+
+<div class="login-card">
+
+<!-- ==========================================
+LOGO
+========================================== -->
+
+<div class="logo-box">
+
+<img
+
+src="../../assets/logo/logo.png"
+
+alt="Logo"
+
+class="logo">
+
+<h1>
+
+Don Martial
+
+</h1>
+
+<p>
+
+Shopping Mart
+
+</p>
+
+</div>
+
+<!-- ==========================================
+TITLE
+========================================== -->
+
+<div class="title-box">
+
+<h2>
+
+Admin Panel
+
+</h2>
+
+<p>
+
+Authorized Access Only
+
+</p>
+
+</div>
+<!-- ==========================================
+LOGIN FORM
+========================================== -->
+
+<form
+id="loginForm"
+class="login-form">
+
+<!-- ==========================================
+ADMIN ID
+========================================== -->
+
+<div class="input-group">
+
+<label>
+
+Admin ID
+
+</label>
+
+<div class="input-box">
+
+<span class="material-symbols-rounded">
+
+badge
+
+</span>
+
+<input
+
+type="text"
+
+id="adminId"
+
+placeholder="Enter Admin ID"
+
+autocomplete="off"
+
+required>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+SECRET KEY
+========================================== -->
+
+<div class="input-group">
+
+<label>
+
+Secret Key
+
+</label>
+
+<div class="input-box">
+
+<span class="material-symbols-rounded">
+
+key
+
+</span>
+
+<input
+
+type="password"
+
+id="adminKey"
+
+placeholder="Enter Secret Key"
+
+required>
+
+<button
+
+type="button"
+
+id="togglePassword"
+
+class="toggle-password">
+
+<span
+id="toggleIcon"
+class="material-symbols-rounded">
+
+visibility
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+LOGIN BUTTON
+========================================== -->
+
+<button
+
+type="submit"
+
+id="loginBtn"
+
+class="login-btn">
+
+<span class="material-symbols-rounded">
+
+login
+
+</span>
+
+Login To Admin Panel
+
+</button>
+
+</form>
+
+<!-- ==========================================
+ERROR MESSAGE
+========================================== -->
+
+<div
+id="errorBox"
+class="error-box">
+
+<span class="material-symbols-rounded">
+
+error
+
+</span>
+
+<p id="errorMessage">
+
+Invalid Admin ID or Secret Key
+
+</p>
+
+</div>
+
+<!-- ==========================================
+SUCCESS MESSAGE
+========================================== -->
+
+<div
+id="successBox"
+class="success-box">
+
+<span class="material-symbols-rounded">
+
+check_circle
+
+</span>
+
+<p>
+
+Login Successful
+
+</p>
+
+</div>
+<!-- ==========================================
+LOADING OVERLAY
+========================================== -->
+
+<div
+id="loadingOverlay"
+class="loading-overlay">
+
+<div class="loading-card">
+
+<div class="loader"></div>
+
+<h3>
+
+Signing In...
+
+</h3>
+
+<p>
+
+Please wait while we verify your credentials.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<div class="login-footer">
+
+<p>
+
+© 2026 Don Martial Shopping Mart
+
+</p>
+
+<p>
+
+Secure Admin Access
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+SUPABASE
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../js/auth/config.js"></script>
+
+<script src="../../js/auth/supabase.js"></script>
+
+<!-- ==========================================
+ADMIN LOGIN
+========================================== -->
+
+<script src="../../js/admin/login.js"></script>
+
+</body>
+
+</html>

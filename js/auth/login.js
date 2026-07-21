@@ -512,7 +512,7 @@ async function loginUser(){
 
         dialogButton.onclick=()=>{
 
-            window.location.href="../dashboard.html";
+            window.location.href="../../pages/dashboard/dashboard.html";
 
         };
 
